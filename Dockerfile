@@ -6,5 +6,6 @@ apt-get install -y python3-pip python-dev-is-python3 build-essential
 ADD . /flask-app
 WORKDIR /flask-app
 RUN apt install -y python3-flask
+COPY /home/piluspi/jenkins_testing/certs /certs
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
