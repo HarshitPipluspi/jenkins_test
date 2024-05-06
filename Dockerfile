@@ -9,3 +9,5 @@ RUN apt install -y python3-flask
 COPY /certs /certs
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
+USER jenkins
+RUN jenkins-plugin-cli --plugins "blueocean:1.25.3 docker-workflow:1.28"
